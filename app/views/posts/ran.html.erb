@@ -1,0 +1,29 @@
+<h1>みんなの投稿一覧</h1>
+<h3>おすすめ場所を見てみよう！</h3>
+<% @posts.each do |t| %>
+    <div class="post">
+      <%= t.name %>
+      <%= t.address %>
+      <%= t.price %>
+      <%= t.about %>
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+    </div>
+
+    <%= link_to "詳細へ", post_path(t.id) %>  
+    
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+        <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+          <p>いいねを取り消す</p><%= t.likes.count %>
+        <% end %>
+      <% else %>
+        <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+          <p>いいね</p><%= t.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>いいねの数 = </p><%= t.likes.count %>
+    <% end %>
+  <% end %>
+
+  <%= link_to "一覧に戻る", posts_path %>

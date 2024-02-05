@@ -1,0 +1,33 @@
+<h1 class="page-title">新規おすすめ場所</h1>
+<h3>自由に書いてみよう！</h3>
+
+<%= form_for @post do |f| %>
+  <div class="form-field">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", placeholder: "スポットの名前", required: true %>
+  </div>
+
+  <div class="form-field">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control", placeholder: "住所", required: true %>
+  </div>
+
+  <div class="form-field">
+    <%= f.label :price %>
+    <%= f.number_field :price, class: "form-control", placeholder: "価格", required: true %>
+  </div>
+
+  <div class="form-field">
+    <%= f.label :about %>
+    <%= f.text_area :about, class: "form-control", placeholder: "スポットについて", required: true %>
+  </div>
+
+  <div class="form-field">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <%= f.submit "スポットを投稿する", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "一覧に戻る", posts_path, class: "btn btn-secondary" %>

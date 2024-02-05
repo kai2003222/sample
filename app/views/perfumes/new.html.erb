@@ -1,0 +1,45 @@
+<h1>遊び場診断スタート</h1>
+<%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
+    <div class="perfume-container">
+        <div class="col-12">
+            <p>Q1. 施設費用など遊ぶ費用は1000円以内がいいですか？(交通費除く)</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question1, "1", id: "custom_id1" %>
+            <label for="custom_id1">1000円以内がいい</label>
+            <%= f.radio_button :question1, "2", id: "custom_id2" %>
+            <label for="custom_id2">1000円以内ではなくても大丈夫だ</label>
+        </div>
+        <div class="col-12">
+            <p>Q2. どんな場所で遊びたいですか？</p>
+        </div> 
+        <div class="col-6">
+            <%= f.radio_button :question2, "1", id: "custom_id3" %>
+            <label for="custom_id3">23区内で遊びたい</label>
+            <%= f.radio_button :question2, "2", id: "custom_id4" %>
+            <label for="custom_id4">23区外で遊びたい</label>
+        </div>   
+        <div class="col-12">
+            <p>Q3. 移動距離は短い方がいいですか？</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question3, "1", id: "custom_id5" %>
+            <label for="custom_id5">短いほうがいい</label>
+            <%= f.radio_button :question3, "2", id: "custom_id6" %>
+            <label for="custom_id6">短くなくとも大丈夫だ</label>
+        </div>
+    
+        <div class="col-12">
+            <p>Q4. どんな気分で遊びたいか？</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question4, "1", id: "custom_id7" %>
+            <label for="custom_id7">ゆっくりしたい気分だ</label>
+            <%= f.radio_button :question4, "2", id: "custom_id8" %>
+            <label for="custom_id8">わくわくしたい気分だ</label>
+        </div>
+    </div>
+    <div class="sindanbotan">
+        <%= f.submit " 結果 " %>
+    </div>
+<% end %>
