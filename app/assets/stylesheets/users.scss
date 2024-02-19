@@ -1,3 +1,35 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.profile{font-size: 60px;
+text-align: center;}
+
+.c-container{
+    display: flex;
+    justify-content: right;
+    
+}
+
+.pro-container{font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+    margin-right: 160px;
+
+}
+.character{margin-right: 120px;}
+.kuuhaku{background-color: rgb(65, 22, 114);
+    width: 100%;
+    height: 5px;}
+    
+.vertical-line {
+        border-left: 1px solid #122f65; /* 線の色や太さを調整できます */
+        
+      }
+      
+.pro1-container{
+    display: flex;
+    text-align: center;
+    padding: 0px 350px;
+gap: 150px;
+}
+
+.prou-container{flex-wrap: wrap;}
+
+.proiine-container{flex-wrap: wrap;}

@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   end
   root 'posts#index'
   
+  delete 'posts/:id' => 'posts#destroy'
+
   resources :perfumes
 end

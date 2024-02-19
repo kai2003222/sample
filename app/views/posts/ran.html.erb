@@ -13,7 +13,7 @@
           <P><%= t.name %></P>
           <P><%= t.address %></P>
           <P><%= t.price %></P>
-        
+          <%= link_to "削除する", post_path(t.id), method: :delete %>
           <P> <%= link_to "詳細へ", post_path(t.id) %>  </P>
         <% if user_signed_in? %>
           <% if current_user.already_liked?(t) %>
