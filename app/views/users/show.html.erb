@@ -9,21 +9,21 @@
 
 <h2>ユーザーの投稿一覧</h2>
 <% @user.posts.each do |t| %>
-  <%= t.user.name %>
-  <%= t.address %>
-  <%= t.price %>
-  <%= t.about %>
-  <%= image_tag t.image_url, size: "250x200" if t.image? %>
+  <P><%= t.user.name %></P>
+  <P><%= t.address %></P>
+  <P><%= t.price %></P>
+  <P><%= t.about %></P>
+  <P><%= image_tag t.image_url, size: "250x200" if t.image? %></P>
 <% end %>
 
 <!-- 以下はいいね機能を実装している場合-->
 <h2>ユーザーがいいねした投稿一覧</h2>
 <% @user.liked_posts.each do |t| %>
-  <%= t.user.name %>
-  <%= t.address %>
-  <%= t.price %>
-  <%= t.about %>
-  <%= image_tag t.image_url, size: "250x200" if t.image? %>
+  <P><%= t.user.name %></P>
+  <P><%= t.address %></P>
+  <P><%= t.price %></P>
+  <P><%= t.about %></P>
+  <P><%= image_tag t.image_url, size: "250x200" if t.image? %></P>
 <% end %>
 <!-- ここまで-->
 </br>

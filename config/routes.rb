@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  # ... 既存のルート
+
+  resources :sindans, only: [:index]  # sindans_controller.rbのindexアクションを追加
+
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
   resources :users, only: [:show] 
   
   resources :posts do
@@ -11,6 +15,6 @@ Rails.application.routes.draw do
     end
   end
   root 'posts#index'
-
+  
   resources :perfumes
 end

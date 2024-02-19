@@ -11,8 +11,32 @@
 
   <body>
  <header>
-  <h1>BookPlace</h1>
-  
+  <div class="head1-container">
+    <div class="head1">
+    <h1>BookPlace</h1>
+    </div>
+    <div class="head2-container">
+      <div class="head2">
+      <%= link_to "Home", posts_path %>
+      </div>
+      <div class="head3">
+      <%= link_to "遊び診断", sindans_path %>
+      </div>
+      <div class="head4">
+      <%= link_to "新規投稿", new_post_path %>
+      </div>
+      <div class="head5">
+      <%= link_to "投稿一覧", ran_posts_path %>
+      </div>
+      <div class="head6">
+      <% if user_signed_in? %>
+            <%= link_to "マイページ", user_path(current_user.id) %>
+        <% else %>
+            <%= link_to "マイページ", new_user_session_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
  </header>
 
  </main>
@@ -22,3 +46,5 @@
     <%= yield %>
   </body>
 </html>
+
+

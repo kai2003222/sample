@@ -1,0 +1,28 @@
+header {
+    height: 65px;
+    background-color: rgb(19, 225, 225);
+}
+.head1-container{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .head1{font-size: 32px;
+        line-height: 65px;}
+
+.head2-container{
+    align-items: center;
+    display: flex;
+    margin-left: 200px;
+    font-size: 16px;
+}
+.head2, .head3, .head4, .head5, .head6 {
+    margin-right: 35px; /* 各リンクの右側の余白 */
+}
+.head2-container a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.636);
+    font-weight: bold; /* フォントの太さ */
+}
+}

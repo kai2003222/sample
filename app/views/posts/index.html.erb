@@ -1,30 +1,122 @@
 <div class="tamariba1">
-<br>
-<% if user_signed_in? %>
-     <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <% else %>
-     <li><%= link_to "新規登録", new_user_registration_path %></li>
-     <li><%= link_to "ログイン", new_user_session_path %></li>
-    <% end %>
 </div>
-<div class="tamariba2">
-<%= link_to "新規投稿へ", new_post_path %>
 
-<br>
+<div class="tamariba2">
+ <div class="peace">
+ <p>World Peace</p>
+ </div>
+
+ <div class="icon-container">
+
+    <div class="icon1">
+        <%= link_to sindans_path do %>
+            <%= image_tag 'bouen.jpg', size: '200x200' %>
+        <% end %>
+    </div>
+    <div class="icon2">
+    <%= link_to new_post_path do %>
+    <%= image_tag 'tegami.jpg', size: '200x200' %>
+    <% end %>
+    </div>
+
+    <div class="icon3">
+    <%= link_to ran_posts_path do %>
+    <%= image_tag 'hune.jpg', size: '200x200' %>
+    <% end %>
+    </div>
+
+    <div class="icon4">
+    <% if user_signed_in? %>
+            <%= link_to user_path(current_user.id) do %>
+                <%= image_tag 'shelf.jpg', size: '200x200' %>
+            <% end %>
+        <% else %>
+            <%= link_to new_user_session_path do %>
+                <%= image_tag 'shelf.jpg', size: '200x200' %>
+            <% end %>
+    <% end %>
+    
+
+    </div>
+ </div>
+
 </div>
 
 <div class="tamariba3">
-<% if user_signed_in? %>
-  <%= link_to "マイページへ", user_path(current_user.id) %>
-  <% else %>
-  <%= link_to "マイページへ", new_user_session_path %>
-<% end %>
+    
 </div>
-<div class="tamariba4">
-<%= link_to "診断へ", new_perfume_path %>
-<br>
+
+<div class="start-container">
+        <div class="start1">
+          
+        </div>
+        <div class="start1-container">
+        <br>
+    <% if user_signed_in? %>
+     <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% else %>
+     <%= button_to "ログイン", new_user_session_path %>
+    <% end %>
+    </div>
 </div>
-<%= link_to "投稿一覧へ", ran_posts_path %>
 
+<div class="photo1-container">
+    <div class="tamariba5">
+        <div class="sindan">
+         <p>きっと見つかる<br>あなたの探してる場所が</p>
+        </div>
 
+    </div>
 
+    <div class="tamariba6">
+        <div class="toukou">
+            <p>あなたの好きな場所を<br>みんなに伝えに行く</p>
+        </div>
+        
+    </div>
+</div>
+
+<div class="kinou-container1">
+<div class="sindan1">
+<%= link_to "診断へ", sindans_path %>
+</div>
+<div class="toukou1">
+            <%= link_to "新規投稿へ", new_post_path %>
+        </div>
+</div>
+
+<div class="photo2-container">
+    <div class="tamariba7">
+        <div class="itiran">
+         <p>みんなの好きな場所を<br>探しにいく</p>
+        </div>
+        
+    </div>
+
+    <div class="tamariba8">
+        <div class="page">
+         <p>あなたの個性<br>オリジナルのページ</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="kinou-container2">
+<div class="itiran1">
+            <%= link_to "投稿一覧へ", ran_posts_path %>
+        </div>
+        <div class="page1">
+        <% if user_signed_in? %>
+            <%= link_to "マイページへ", user_path(current_user.id) %>
+        <% else %>
+            <%= link_to "マイページへ", new_user_session_path %>
+        <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="tamariba9">
+  <div class="contact">
+    <p>Contact Me</p>
+  </div>
+</div>

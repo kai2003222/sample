@@ -1,29 +1,34 @@
-<h1>みんなの投稿一覧</h1>
-<h3>おすすめ場所を見てみよう！</h3>
-<% @posts.each do |t| %>
-    <div class="post">
-      <%= t.name %>
-      <%= t.address %>
-      <%= t.price %>
-      <%= t.about %>
-      <%= image_tag t.image_url, size: "250x200" if t.image? %>
-    </div>
+<html>
+<head>
+  <title>みんなの投稿一覧</title>
+  <%= stylesheet_link_tag 'posts.ran' %> <!-- posts.ran.scss ファイルを読み込む -->
+</head>
+<body class="ran">
 
-    <%= link_to "詳細へ", post_path(t.id) %>  
-    
-    <% if user_signed_in? %>
-      <% if current_user.already_liked?(t) %>
-        <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-          <p>いいねを取り消す</p><%= t.likes.count %>
+  <h1>みんなの投稿一覧</h1>
+  <div class="ichiran1-container">
+    <% @posts.each do |t| %>
+      <div class="ichiran2-contain">
+      <P> <%= image_tag t.image_url, size: "250x200" if t.image? %></P>
+          <P><%= t.name %></P>
+          <P><%= t.address %></P>
+          <P><%= t.price %></P>
+        
+          <P> <%= link_to "詳細へ", post_path(t.id) %>  </P>
+        <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+            <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+              <p>いいねを取り消す</p><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+              <p>いいね</p><%= t.likes.count %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <p>いいねの数 = </p><%= t.likes.count %>
         <% end %>
-      <% else %>
-        <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-          <p>いいね</p><%= t.likes.count %>
-        <% end %>
+        </div>
       <% end %>
-    <% else %>
-      <p>いいねの数 = </p><%= t.likes.count %>
-    <% end %>
-  <% end %>
-
-  <%= link_to "一覧に戻る", posts_path %>
+ 
+  </div>

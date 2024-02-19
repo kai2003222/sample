@@ -1,7 +1,7 @@
-<h1>Book</h1>
-<h3>Post詳細</h3>
+<h3>つぶやき詳細</h3>
 <div class="post">
-  <p><%= @post.address %></p>
+  <p><%= image_tag @post.image_url, size: "250x200" if @post.image? %></p>
+  <p><%= @post.about %></p>
   <p><%= @post.created_at %></p>
     <% if user_signed_in? %>
       <% if current_user.already_liked?(@post) %>
