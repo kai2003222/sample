@@ -3,12 +3,12 @@ header {
     background-color: rgb(19, 225, 225);
 }
 .head1-container{
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .head1{font-size: 32px;
+    .head1{font-family: Segoe Script;
+        font-size: 32px;
         line-height: 65px;}
 
 .head2-container{
@@ -18,8 +18,10 @@ header {
     font-size: 16px;
 }
 .head2, .head3, .head4, .head5, .head6 {
+    font-family: cursive;
     margin-right: 35px; /* 各リンクの右側の余白 */
 }
+
 .head2-container a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.636);
